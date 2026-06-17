@@ -1,0 +1,71 @@
+import random
+
+jokes = [
+    "Why do programmers hate nature? It has too many bugs.",
+    "I told my computer I needed a break... it said 'No problem, I’ll go to sleep.'",
+    "There are 10 types of people: those who understand binary and those who don’t.",
+    "Debugging: Being the detective in a crime movie where you are also the murderer.",
+    "My code works... I have no idea why."
+]
+
+roasts = [
+    "You write code like it’s a mystery novel... nobody understands it.",
+    "Your WiFi is faster than your coding logic.",
+    "Even Stack Overflow needs time to recover from your questions.",
+    "You don’t have bugs, you have feature stories.",
+]
+
+def fake_hack():
+    print("Initializing system breach...")
+    for i in range(1, 6):
+        print("Hacking server " + str(i) + "/5 [OK]")
+
+    print("Accessing mainframe...")
+    print("Downloading data... 100%")
+    print("ERROR: Just kidding 😆 you got pranked!\n")
+
+def joke_mode():
+    print("Developer Joke:\n")
+    print(random.choice(jokes), "\n")
+
+def roast_mode():
+    print("Roast:\n")
+    print(random.choice(roasts), "\n")
+
+def guess_game():
+    num = random.randint(1, 5)
+    guess = random.randint(1, 5)  # no input() to avoid I/O error
+
+    print("Guess Game (auto mode)")
+    print("Your guess:", guess)
+    print("Correct number:", num)
+
+    if guess == num:
+        print("You won 😳\n")
+    else:
+        print("You lost 😏\n")
+
+def menu():
+    print("\n=== FUNNY TERMINAL PROJECT ===")
+    print("1. Fake Hack Mode")
+    print("2. Developer Joke")
+    print("3. Roast Me")
+    print("4. Guess Game")
+    print("5. Run All\n")
+
+menu()
+choice = "5"  # auto-run safe mode (no input crash)
+
+if choice == "1":
+    fake_hack()
+elif choice == "2":
+    joke_mode()
+elif choice == "3":
+    roast_mode()
+elif choice == "4":
+    guess_game()
+else:
+    fake_hack()
+    joke_mode()
+    roast_mode()
+    guess_game()
